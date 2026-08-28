@@ -34,7 +34,7 @@ Then we specify a few thresholds:
 * Window of "Good Parking"
 * Too Close
 
-For my garage, these range for these thresholds are:
+For my garage, the range for these thresholds is:
 
 | Threshold      | Range      |
 |  ---  |  ---  |
@@ -82,7 +82,7 @@ For some reason, a small rectangle on the lower right of my LED panel displays s
 
 When the device first starts up, the ESP32 connects to WIFI and displays the IP address along with an emoji of a car to the LED panel. The device doesn't actually need WIFI, but I've got it mounted pretty high in my garage and it would be a pain to get it down to reprogram it, so connecting to WIFI is solely for being able to update it OTA. If you don't need or want this, you can easily remove it.
 
-This does give me some flexibility as I have a [ratgdo](https://ratcloud.llc/) hooked up to my garage door, so I could factor in the garage door state (opening, open, closing, closed) but for now I've kept it pretty simple.
+It also gives me some flexibility as I have a [ratgdo](https://ratcloud.llc/) hooked up to my garage door, so I could factor in the garage door state (opening, open, closing, closed) but for now I've kept it pretty simple.
 
 ### mounting
 
@@ -95,5 +95,9 @@ Almost all of the code is vibe-coded from an LLM or copied from the ESP32 Trinit
 ### final parting thoughts
 
 * I should have taken more photos of the build, especially the wiring on the back of the LED panel. If I ever take it down to change something, I'll take some photos and add it to this repo.
-* This is my first time using PlatformIO instead of the Arduino IDE and I should probably have made this change sooner. I still find it too heavy for what it needs to be but the library management seems a lot more sane.
-* Still impressed with [Tinkercad](https://www.tinkercad.com/) for modeling 3D printed parts - I built the standoffs and a small box for the sensor really quickly using it. 
+* This is my first time using PlatformIO instead of the Arduino IDE and I should probably have made this change sooner for my ESP32 projects. I still find it too heavy for what it needs to be but the library management seems a lot more sane.
+* Still impressed with [Tinkercad](https://www.tinkercad.com/) for modeling 3D printed parts - I built the standoffs and a small box for the sensor really quickly using it.
+
+## conclusion
+
+Let me know if you build this or have any thoughts or concerns at bert@bert.org
