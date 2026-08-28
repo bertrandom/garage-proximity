@@ -23,6 +23,8 @@ https://github.com/user-attachments/assets/5e28ec60-62f2-48d7-ac87-da383c170af0
 
 ### ultrasonic distance sensor
 
+<img width="600" height="600" alt="15569-Ultrasonic_Distance_Sensor_-_HC-SR04-01a" src="https://github.com/user-attachments/assets/01d29e5e-8131-4594-9c25-955c1dd1200b" />
+
 The HC-SR04 Ultrasonic Distance Sensor has two circles that look like speakers. Well, one of them is a speaker. It emits a sound forward and if there's something in front of it, it'll bounce off that and come back toward the other circle which is a receiver. It calculates how long this took and reports this back to the ESP32.
 
 On the ESP32, we do some math: (Time Duration * Velocity of Sound (340 m/s)) / 2 = Distance.
