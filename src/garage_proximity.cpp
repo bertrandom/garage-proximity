@@ -1,3 +1,4 @@
+#include <Fonts/Picopixel.h>
 #include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>
 
 #include <WiFi.h>
@@ -5,6 +6,7 @@
 #include <ArduinoOTA.h>
 
 #include "secrets.h"
+#include "images.h"
 
 const int trigPin = 21;
 const int echoPin = 22;
@@ -67,6 +69,7 @@ uint16_t myWHITE;
 uint16_t myRED;
 uint16_t myGREEN;
 uint16_t myBLUE;
+uint16_t myGRAY;
 
 
 // -------------------------------------
@@ -166,11 +169,14 @@ void displaySetup() {
   dma_display = new MatrixPanel_I2S_DMA(mxconfig);
   dma_display->begin();
 
+  // dma_display->setBrightness8(64);
+
   myBLACK = dma_display->color565(0, 0, 0);
   myWHITE = dma_display->color565(255, 255, 255);
   myRED   = dma_display->color565(255, 0, 0);
   myGREEN = dma_display->color565(0, 255, 0);
   myBLUE  = dma_display->color565(0, 0, 255);
+  myGRAY  = dma_display->color565(32, 32, 32);
 }
 
 
@@ -219,6 +225,28 @@ void setup() {
   dma_display->clearScreen();
   dma_display->fillScreen(myBLACK);
   dma_display->setTextWrap(false);
+
+  dma_display->drawRGBBitmap(
+      0,
+      0,
+      epd_bitmap_car,
+      64,
+      64
+  );
+
+  dma_display->setCursor(2, 0);
+  dma_display->setTextColor(myWHITE);
+  dma_display->setTextSize(1);
+  dma_display->setFont(&Picopixel);
+  dma_display->println("STARTING UP...");
+
+  dma_display->setCursor(2, 12);
+  dma_display->println("IP: " + WiFi.localIP().toString());
+
+  dma_display->flipDMABuffer();
+
+  delay(1000);
+
 }
 
 
@@ -337,7 +365,14 @@ void loop() {
 
   if (inGreenRange && !solidColorTimedOut) {
 
-    dma_display->fillScreen(myGREEN);
+    dma_display->drawRGBBitmap(
+        0,
+        0,
+        epd_bitmap_smiling_cat_face_with_heart_eyes,
+        64,
+        64
+    );
+
   }
 
 
@@ -347,7 +382,14 @@ void loop() {
 
   else if (inRedRange && !solidColorTimedOut) {
 
-    dma_display->fillScreen(myRED);
+    dma_display->drawRGBBitmap(
+        0,
+        0,
+        epd_bitmap_woman_gesturing_no_2,
+        64,
+        64
+    );
+
   }
 
 
@@ -395,13 +437,44 @@ void loop() {
 
       uint16_t color = dma_display->color565(r, g, b);
 
-      // Draw 64 pixels high starting at (0, 0)
+      // Draw 62 pixels high starting at (0, 1)
       dma_display->drawFastVLine(
         x,
-        0,
-        64,
+        1,
+        62,
         color
       );
+
+
+      dma_display->drawFastVLine(
+        0,
+        0,
+        64,
+        myGRAY
+      );
+
+      dma_display->drawFastVLine(
+        63,
+        0,
+        64,
+        myGRAY
+      );
+
+
+      dma_display->drawFastHLine(
+        0,
+        0,
+        64,
+        myGRAY
+      );
+
+      dma_display->drawFastHLine(
+        0,
+        63,
+        64,
+        myGRAY
+      );
+
     }
   }
 
