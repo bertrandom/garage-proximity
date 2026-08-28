@@ -55,7 +55,11 @@ During the "Getting Close" threshold, we draw a horizontal meter with rainbow co
 
 During the Window of "Good Parking", we display the "cat with heart eyes" emoji.
 
+<img width="64" height="64" alt="smiling cat face with heart-eyes" src="https://github.com/user-attachments/assets/5a420703-3844-4a51-8d23-38d0750ae5c7" />
+
 If the driver keeps getting closer, eventually they'll hit the "Too Close" threshold and we'll show the "woman gesturing no" emoji.
+
+<img width="64" height="64" alt="woman gesturing no 2" src="https://github.com/user-attachments/assets/7452f98c-2634-4537-932b-4d75aa6e3cbe" />
 
 The emojis were extracted from the Apple Color Emoji font using [Emoji Extractor Plus](https://github.com/akfreas/emoji-extractor-plus) as 64x64 PNGs and then converted to Arduino byte arrays using [image2cpp](https://javl.github.io/image2cpp/). Settings chosen that were different than the defaults were:
 
@@ -84,7 +88,11 @@ For some reason, a small rectangle on the lower right of my LED panel displays s
 
 ### wifi
 
-When the device first starts up, the ESP32 connects to WIFI and displays the IP address along with an emoji of a car to the LED panel. The device doesn't actually need WIFI, but I've got it mounted pretty high in my garage and it would be a pain to get it down to reprogram it, so connecting to WIFI is solely for being able to update it OTA. If you don't need or want this, you can easily remove it.
+When the device first starts up, the ESP32 connects to WIFI and displays the IP address along with an emoji of a car to the LED panel.
+
+<img width="64" height="64" alt="car" src="https://github.com/user-attachments/assets/e3414c1b-2a01-4734-9313-23fd5eea31b3" />
+
+The device doesn't actually need WIFI, but I've got it mounted pretty high in my garage and it would be a pain to get it down to reprogram it, so connecting to WIFI is solely for being able to update it OTA. If you don't need or want this, you can easily remove it.
 
 It also gives me some flexibility as I have a [ratgdo](https://ratcloud.llc/) hooked up to my garage door, so I could factor in the garage door state (opening, open, closing, closed) but for now I've kept it pretty simple.
 
