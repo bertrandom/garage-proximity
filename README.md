@@ -74,6 +74,8 @@ I briefly considered hooking up the sensor to another ESP32 and having the two c
 
 In a moment of genius or idiocy, I googled ethernet breakout boards and discovered that I could just run 4 female-to-female dupont cables from the sensor to the breakout board, run CAT 6 from the breakout board to another breakout board, and then connect 4 more female-to-female dupont cables back to the ESP32. The Echo and Trig pins on the sensor are eventually hooked up to the SDA and SCL pins on the ESP32 Trinity, and the 5V and GND are hooked up to the red and black screw terminals on the Trinity. The CAT 6 run is pretty tidy, the back of the sensor and the panel are not.
 
+<img width="1920" height="1440" alt="IMG_5869" src="https://github.com/user-attachments/assets/8e440e1e-8818-4667-b175-d5fb8e97cf41" />
+
 The obvious correct thing to do would be to solder header pins onto the SDA and SCL pins on the ESP32 Trinity, but I just stuck a male dupont cable in those and gaffer taped them out of sheer laziness. If it ever falls out I probably will solder them.. or reapply some gaffer tape.
 
 ### some weirdness that's worth mentioning
