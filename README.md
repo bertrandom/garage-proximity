@@ -48,6 +48,8 @@ To calculate these thresholds, I wrote a sketch that just displays the current d
 
 ### LED panel
 
+<img width="1221" height="1280" alt="IMG_5871" src="https://github.com/user-attachments/assets/12f27a96-52a0-4184-84af-27416db43a4b" />
+
 Displaying stuff on the LED panel is handled by the ESP32 Trinity and the [ESP32-HUB75-MatrixPanel-DMA
 ](https://github.com/mrcodetastic/ESP32-HUB75-MatrixPanel-DMA) library, which also leverages the [Adafruit GFX](https://github.com/adafruit/adafruit-gfx-library) library.
 
@@ -106,7 +108,6 @@ Almost all of the code is vibe-coded from an LLM or copied from the ESP32 Trinit
 
 ### final parting thoughts
 
-* I should have taken more photos of the build, especially the wiring on the back of the LED panel. If I ever take it down to change something, I'll take some photos and add it to this repo.
 * This is my first time using PlatformIO instead of the Arduino IDE and I should probably have made this change sooner for my ESP32 projects. I still find it too heavy for what it needs to be but the library management seems a lot more sane.
 * Still impressed with [Tinkercad](https://www.tinkercad.com/) for modeling 3D printed parts - I built the standoffs and a small box for the sensor really quickly using it.
 
