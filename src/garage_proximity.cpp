@@ -276,7 +276,7 @@ void loop() {
   // Read echo
   // -------------------------------------
 
-  duration = pulseIn(echoPin, HIGH);
+  duration = pulseIn(echoPin, HIGH, 15000);
 
   float newDistance = (duration * 0.0343) / 2;
 
@@ -445,37 +445,37 @@ void loop() {
         color
       );
 
-
-      dma_display->drawFastVLine(
-        0,
-        0,
-        64,
-        myGRAY
-      );
-
-      dma_display->drawFastVLine(
-        63,
-        0,
-        64,
-        myGRAY
-      );
-
-
-      dma_display->drawFastHLine(
-        0,
-        0,
-        64,
-        myGRAY
-      );
-
-      dma_display->drawFastHLine(
-        0,
-        63,
-        64,
-        myGRAY
-      );
-
     }
+
+    dma_display->drawFastVLine(
+      0,
+      0,
+      64,
+      myGRAY
+    );
+
+    dma_display->drawFastVLine(
+      63,
+      0,
+      64,
+      myGRAY
+    );
+
+
+    dma_display->drawFastHLine(
+      0,
+      0,
+      64,
+      myGRAY
+    );
+
+    dma_display->drawFastHLine(
+      0,
+      63,
+      64,
+      myGRAY
+    );
+
   }
 
 
