@@ -276,6 +276,8 @@ void loop() {
   // Read echo
   // -------------------------------------
 
+  // 15ms timeout to avoid blocking if no echo is received
+  // but this will limit the maximum measurable distance to ~2.5 meters
   duration = pulseIn(echoPin, HIGH, 15000);
 
   float newDistance = (duration * 0.0343) / 2;
