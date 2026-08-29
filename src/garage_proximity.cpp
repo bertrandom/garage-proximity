@@ -29,14 +29,14 @@ AsyncWebServer server(80);
 
 // Full-screen red range
 const float FULL_RED_MIN_DISTANCE = 1.0;
-const float FULL_RED_MAX_DISTANCE = 20.0;
+const float FULL_RED_MAX_DISTANCE = 40.0;
 
 // Full-screen green range
-const float FULL_GREEN_MIN_DISTANCE = 20.0;
-const float FULL_GREEN_MAX_DISTANCE = 40.0;
+const float FULL_GREEN_MIN_DISTANCE = 40.0;
+const float FULL_GREEN_MAX_DISTANCE = 60.0;
 
 // Rainbow bar range
-const float BAR_MIN_DISTANCE = 40.0;
+const float BAR_MIN_DISTANCE = 60.0;
 const float BAR_MAX_DISTANCE = 150.0;
 
 
