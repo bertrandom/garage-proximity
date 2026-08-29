@@ -485,5 +485,7 @@ void loop() {
 
   dma_display->flipDMABuffer();
 
-  delay(100);
+  ArduinoOTA.handle();
+
+  delay(50);
 }
